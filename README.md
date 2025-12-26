@@ -25,7 +25,6 @@ A principal filosofia arquitetural deste projeto é a **Clean Architecture** (Ar
 * **State Management:** Composables (Native Reactivity) & VueUse
 * **Arquitetura:** Modular com foco em Composables como camada de serviço.
 
----
 
 ## 📂 Estrutura do Projeto (Monorepo)
 
@@ -46,7 +45,6 @@ O front-end foi construído seguindo as diretrizes do **Nuxt 4**, com o código-
 
 A arquitetura espelha os padrões de camadas do backend, garantindo consistência mental, previsibilidade e facilidade de manutenção.
 
----
 
 ## 📁 Estrutura Arquitetural — Tabela de Diretórios
 
@@ -61,7 +59,6 @@ A arquitetura espelha os padrões de camadas do backend, garantindo consistênci
 | `lib/`           | Helpers                    | Funções puras e utilitários de uso geral, como formatação de moeda, datas, validações e regras reutilizáveis. |
 | `utils/`         | Helpers                    | Utilitários auxiliares específicos da aplicação ou do Tailwind, sem estado e com foco em reutilização. |
 
----
 
 ## 🏗 Arquitetura do Back-end (`/backend`)
 
@@ -76,7 +73,15 @@ A arquitetura espelha os padrões de camadas do backend, garantindo consistênci
 | `internal/repository/`  | Data Access       | Camada de acesso a dados. Responsável pela comunicação direta com o banco de dados e execução das queries SQL. |
 | `pkg/`                 | Public            | Bibliotecas auxiliares reutilizáveis, como loggers, parsers e helpers compartilháveis entre projetos. |
 
----
+
+## ⚙️ Gestão de Configurações & Logs
+
+O projeto segue as premissas de [12-Factor Apps](https://12factor.net/) para configurações e observabilidade:
+
+- **Configuração Dinâmica:** Utiliza `Viper` com mapeamento automático via Reflection.
+- **Segurança:** Validação de variáveis obrigatórias no boot da aplicação (Fail Fast).
+- **Logs Estruturados:** Logs emitidos em formato `JSON` via pacote nativo `slog` para facilitar a integração com stacks de monitoramento (ELK/Loki).
+
 
 ## 🚀 Como Rodar o Projeto
 
