@@ -5,5 +5,4 @@
 </template>
 
 <script setup lang="ts">
-// Layout padrão
 </script>
