@@ -31,11 +31,14 @@ A principal filosofia arquitetural deste projeto é a **Clean Architecture** (Ar
 
 O projeto está organizado para facilitar o desenvolvimento isolado de cada parte da stack, mantendo a coesão do produto.
 
+```text
 .
-├── backend/                # API desenvolvida em Go
+├── backend/                # API desenvolvida em Gin
 ├── frontend/               # Aplicação Web Nuxt 4
 ├── compose.yml             # Orquestração de containers (App + DBs)
 └── README.md               # Documentação do projeto
+```
+
 
 ## 🏗 Arquitetura do Front-end (`/frontend`)
 
@@ -87,27 +90,31 @@ A arquitetura espelha os padrões de camadas do backend, garantindo consistênci
 ## Rodando com Docker (Recomendado)
 ### Na raiz do projeto:
 
-´´´bash
-docker compose up -d
-Bash
-
+1. **Configure o ambiente:**
+   Copie o arquivo de exemplo e ajuste as variáveis se necessário:
+   ```bash
+   cp .env.example .env
+2. **Suba os serviços:**
+   ```bash
+   docker compose up -d
 > O Front-end estará disponível em **http://localhost:3000** e a API em **http://localhost:8080**.
 
 ### Desenvolvimento Local (Front-end)
 
-´´´bash
+```bash
 cd frontend
 pnpm install
 pnpm run dev
+```
 
 ## 📝 Padrões de Código
-* **Commits:** Segue o padrão Conventional Commits (ex: feat: add user login, fix: button color).
+* **Commits:** Segue o padrão [Conventional Commits](https://www.conventionalcommits.org/) (ex: feat: add user login, fix: button color).
 
 * **Linting:** ESLint + Prettier (Front-end) e golangci-lint (Back-end).
 
-* **CSS:** Tailwind CSS com a metodologia utility-first.
+* **CSS:** Tailwind CSS com a metodologia [utility-first](https://v2.tailwindcss.com/docs/utility-first).
 
-Feito por Paulo Henrique
+Feito por [Paulo Henrique](https://www.linkedin.com/in/paulo-app)
 
 
 ***
