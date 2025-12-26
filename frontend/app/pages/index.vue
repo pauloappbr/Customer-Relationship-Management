@@ -13,6 +13,5 @@
 </template>
 
 <script setup lang="ts">
-// Importação automática do Composable (Service)
 const { contador, incrementar } = useExemplo()
 </script>
